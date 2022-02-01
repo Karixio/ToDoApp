@@ -1,6 +1,56 @@
-.confirmationBox{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  background: linear-gradient(to right, #67b26f, #4ca2cd);
+  font-family: "Roboto", sans-serif;
+  color: aliceblue;
+}
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 70%;
+  margin: 50px auto 0;
+}
+
+header form,
+.searchBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header form *,
+.searchBox * {
+  margin: 5px 0;
+}
+
+header form input,
+.searchBox input {
+  width: 350px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  height: 30px;
+  line-height: 30px;
+}
+
+header form button {
+  width: 130px;
+  border: none;
+  border-radius: 5px;
+  height: 25px;
+  text-transform: uppercase;
+}
+
+.searchBox button {
+  visibility: hidden;
+}
+
+.confirmationBox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

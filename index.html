@@ -7,15 +7,24 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <form action="">
-        <label for="new">New task</label>
-        <input type="text" id="new">
-        <button>Add</button>
-    </form>
-    <label for="search">Search</label>
-    <input type="text" id='search'>
-    <h1>Number of tasks: <span></span></h1>
-    <ul></ul>
+    <header>
+        <form action="">
+            <label for="new">Create new task</label>
+            <input type="text" id="new" placeholder="Task name">
+            <button>Add</button>
+        </form>
+        <div class="searchBox">
+           <label for="search">Search tasks</label>
+            <input type="text" id='search'>
+            <button>Search</button> 
+        </div>
+        
+    </header>
+    <main>
+        <h1>Total tasks: <span></span></h1>
+        <ul></ul>
+    </main>
+
     <script src="js/main.js"></script>
 </body>
 </html>
