@@ -48,9 +48,65 @@ header form button {
   visibility: hidden;
 }
 
+main h1 {
+  margin: 50px 0 0 40px;
+}
+
+main ul li {
+  position: relative;
+  list-style: none;
+  background-color: whitesmoke;
+  width: 50%;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 5px;
+  color: black;
+  margin-bottom: 15px;
+  padding: 0 10px 0 30px;
+}
+
+main ul li button {
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  border: 1px solid grey;
+  padding: 5px 25px;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+
+main ul li button:hover {
+  background-color: #f33636a6;
+}
+
 .confirmationBox {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 500px;
+  height: 150px;
+  background-color: whitesmoke;
+  color: black;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.confirmationBoxText {
+  text-align: center;
+  padding-top: 60px;
+}
+
+.confirmationBoxButtons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.confirmationBoxButtons button {
+  padding: 5px 35px;
+  margin: 15px 30px;
+  cursor: pointer;
 }

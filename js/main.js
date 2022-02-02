@@ -18,8 +18,12 @@ const showResult = () => {
 const removeTask = (e) => {
     const index = e.target.parentNode.dataset.key;
     const confirmationBox = document.createElement('div');
+    const confirmationBoxText = document.createElement('div')
     confirmationBox.className = 'confirmationBox';
-    confirmationBox.textContent = 'Are you sure you want to delete this task?';
+    confirmationBoxText.textContent = 'Are you sure you want to delete this task?';
+    confirmationBoxText.className = "confirmationBoxText";
+    const confirmationBoxButtons = document.createElement('div');
+    confirmationBoxButtons.className = 'confirmationBoxButtons';
     const confirmationYes = document.createElement('button');
     confirmationYes.textContent = 'Yes';
     confirmationYes.addEventListener('click', function(){
@@ -31,8 +35,10 @@ const removeTask = (e) => {
     confirmationNo.textContent = "No";
     confirmationNo.addEventListener('click', function(){confirmationBox.remove();})
     document.body.appendChild(confirmationBox);
-    confirmationBox.appendChild(confirmationYes);
-    confirmationBox.appendChild(confirmationNo);
+    confirmationBox.appendChild(confirmationBoxText);
+    confirmationBox.appendChild(confirmationBoxButtons);
+    confirmationBoxButtons.appendChild(confirmationYes);
+    confirmationBoxButtons.appendChild(confirmationNo);
     showResult();
 };
 
