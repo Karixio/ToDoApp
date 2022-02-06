@@ -81,6 +81,15 @@ main ul li button:hover {
   background-color: #f33636a6;
 }
 
+.siteCover {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .confirmationBox {
   position: fixed;
   top: 50%;

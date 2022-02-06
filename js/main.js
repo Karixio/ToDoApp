@@ -18,7 +18,9 @@ const showResult = () => {
 const removeTask = (e) => {
     const index = e.target.parentNode.dataset.key;
     const confirmationBox = document.createElement('div');
-    const confirmationBoxText = document.createElement('div')
+    const confirmationBoxText = document.createElement('div');
+    const coverSiteForDelete = document.createElement('div');
+    coverSiteForDelete.className = 'siteCover';
     confirmationBox.className = 'confirmationBox';
     confirmationBoxText.textContent = 'Are you sure you want to delete this task?';
     confirmationBoxText.className = "confirmationBoxText";
@@ -28,13 +30,14 @@ const removeTask = (e) => {
     confirmationYes.textContent = 'Yes';
     confirmationYes.addEventListener('click', function(){
         toDoList.splice(index,1);
-        confirmationBox.remove();
+        coverSiteForDelete.remove();
         showResult();
     });
     const confirmationNo = document.createElement('button');
     confirmationNo.textContent = "No";
-    confirmationNo.addEventListener('click', function(){confirmationBox.remove();})
-    document.body.appendChild(confirmationBox);
+    confirmationNo.addEventListener('click', function(){coverSiteForDelete.remove();})
+    document.body.appendChild(coverSiteForDelete);
+    coverSiteForDelete.appendChild(confirmationBox);
     confirmationBox.appendChild(confirmationBoxText);
     confirmationBox.appendChild(confirmationBoxButtons);
     confirmationBoxButtons.appendChild(confirmationYes);
@@ -65,21 +68,3 @@ const searchTask = (e) => {
 
 button.addEventListener('click', addTask);
 search.addEventListener('input', searchTask);
-
-
-const targetNodeForObserver = document.body;
-const configForObserver = { attributes: true, childList: true, subtree: true };
-
-const callbackForObserver = function(mutationsList, observer) {
-    let itemsButtons = document.querySelectorAll('li>button');
-    // if(document.querySelector('.confirmationBox')){
-    //     for(const button of itemsButtons){
-    //         button.disabled = true;
-    //     }
-    // }else if(!document.querySelector('.confirmationBox')){
-    //     button.disabled = false;
-    // }
-};
-
-const observer = new MutationObserver(callbackForObserver);
-observer.observe(targetNodeForObserver, configForObserver);
