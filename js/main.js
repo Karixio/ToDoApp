@@ -49,8 +49,13 @@ const addTask = (e) => {
     e.preventDefault();
     const textValue = input.value;
     const listElem = document.createElement('li');
+    const spanForText = document.createElement('span');
+    spanForText.textContent = textValue;
+    const delButton = document.createElement('button');
+    delButton.textContent = 'Delete';
     listElem.className = 'task';
-    listElem.innerHTML = textValue + '<button>Delete</button>';
+    listElem.appendChild(spanForText);
+    listElem.appendChild(delButton);
     toDoList.push(listElem);
     showResult();
     listElem.querySelector('button').addEventListener('click', removeTask);

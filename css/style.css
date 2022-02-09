@@ -57,12 +57,16 @@ main ul li {
   list-style: none;
   background-color: whitesmoke;
   width: 50%;
-  height: 60px;
-  line-height: 60px;
+  line-height: 30px;
   border-radius: 5px;
   color: black;
   margin-bottom: 15px;
-  padding: 0 10px 0 30px;
+  padding: 15px 10px 15px 30px;
+}
+
+main ul li span {
+  display: block;
+  width: 70%;
 }
 
 main ul li button {
@@ -147,6 +151,10 @@ main ul li button:hover {
 
   main ul li {
     width: 80%;
+  }
+
+  main ul li span {
+    width: 60%;
   }
 
   main ul li button {
